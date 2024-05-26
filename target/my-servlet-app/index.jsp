@@ -6,5 +6,6 @@
 <body>
     <h1>Welcome to my Servlet App!</h1>
     <p>Visit <a href="${pageContext.request.contextPath}/hello">/hello</a></p>
+    <p>Visit <a href="${pageContext.request.contextPath}/users">/users</a></p>
 </body>
 </html>
