@@ -53,23 +53,29 @@
             <artifactId>flyway-maven-plugin</artifactId>
             <version>9.16.1</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-mysql</artifactId>
+            <version>9.16.1</version>
+        </dependency>
     </dependencies>
 
     <build>
         <finalName>my-servlet-app</finalName>
-    </build>
 
-    <plugin>
-        <groupId>org.flywaydb</groupId>
-        <artifactId>flyway-maven-plugin</artifactId>
-        <version>9.16.1</version>
-        <configuration>
-            <url>jdbc:mysql://mysql:3306/myapp</url>
-            <user>root</user>
-            <password>root</password>
-            <locations>
-                <location>classpath:db/migration</location>
-            </locations>
-        </configuration>
-    </plugin>
+        <plugins>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>9.16.1</version>
+                <configuration>
+                    <url>jdbc:mysql://localhost:3306/java-servlet</url>
+                    <user>admin</user>
+                    <password>pwd123</password>
+                    <locations>classpath:db/migration</locations>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
